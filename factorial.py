@@ -1,3 +1,4 @@
+# Calculates the factorial of a number
 def factorial(n):
   if n == 0:
     return 1

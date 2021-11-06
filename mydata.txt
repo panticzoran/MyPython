@@ -1,0 +1,2 @@
+Some text typed in this file
+And added new line
