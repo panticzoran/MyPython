@@ -1,6 +1,8 @@
 # Testing API with WeatherStack
 
+# Importing environmental variables
 import os
+# External library "requests" is for fetching data over the internet - this module (not actually part of Python)
 import requests
 
 # Local ReplIt: hiding my WeatherStack API key
