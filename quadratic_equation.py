@@ -1,3 +1,5 @@
+# solves quadratic equation
+
 import math
 
 # Inputs 3 coeficients and returns 2 values for x

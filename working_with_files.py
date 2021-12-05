@@ -1,4 +1,6 @@
 # Opens the designated file, reads it, and returns the content of the file
+
+# Reads the file and returns it's content
 def readFile(fileToOpen):
 	f = open(fileToOpen)
 	contents = f.read()
