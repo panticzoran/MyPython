@@ -9,7 +9,6 @@ max = el
 pos1st = 1
 posLast = 1
 
-
 for i in range (1,nrElements):
   el = int(input("Input element #" + str(i+1) + ": "))
   if el > max:
