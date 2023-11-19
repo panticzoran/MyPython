@@ -1,22 +1,23 @@
-# FindPositionOf1stLastMaxElements
-# Find the biggest element in an array, and the positions of the first 
-# and the last elements
+# ArrayAJigsaw - Find out if the array is a "jigsaw" so the 1st element is smaller than
+# 2nd, 3rd smaller than 2nd and 4th, etc 
 
 nrElements = int(input("Input the number of elements: "))
 
 el = int(input("Input element #1: "))
-max = el
-pos1st = 1
-posLast = 1
+previousEl = el
+isJigsaw = True
+
 
 for i in range (1,nrElements):
   el = int(input("Input element #" + str(i+1) + ": "))
-  if el > max:
-    max = el
-    pos1st = i + 1
-  if el == max:
-    posLast = i + 1
-    
+  if i % 2 == 0 and previousEl < el:
+    isJigsaw = False
+    break
+  if i % 2 != 0 and previousEl > el:
+    isJigsaw = False
+    break
 
-print("The max number is ", max, " and it's first occurence is ", 
-      pos1st , " and it's last occurence is ", posLast , ".")
+if isJigsaw:
+  print("The array is a jigsaw.")
+else:
+  print("The array is not a jigsaw.")
