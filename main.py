@@ -18,5 +18,6 @@ def isPerfect(nr):
 checkUntil = 100000 # Check for perfect numbers from 1 to checkUntil
 
 for i in range(2, checkUntil):
+  print("Checking number: ", i , end="\r", flush=True)
   if isPerfect(i):
-    print("The number", i , " is perfect number")
+    print("\n The number", i , " is perfect number")
