@@ -1,11 +1,22 @@
-# ArrayAJigsaw - Find out if the array is a "jigsaw" so the 1st element is smaller than
-# 2nd, 3rd smaller than 2nd and 4th, etc 
+# In array of N elements find the biggest subset of repeating numbers, and 
+# print what numbert it is, what is it's position and how big is the subset
 
-nrElements = int(input("Input the number of elements: "))
 
-el = int(input("Input element #1: "))
-previousEl = el
-isJigsaw = True
+import random
+
+nrElements = 40
+
+print("The number of elements in the array: ", nrElements)
+print("\n")
+
+print("The elements of the array are: ")
+print("\n")
+
+element = random.randint(1, 5) # Generates random integer 1 - 5 (inclusive)
+previousEl = element
+
+
+
 
 
 for i in range (1,nrElements):
