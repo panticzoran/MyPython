@@ -2,16 +2,17 @@
 
 import math
 
+
 def squareRoot(number):
-	approximation = number / 2.0
-	nrOfIterations = 1
-	while True:
-		betterApproximation = (approximation + number/approximation) / 2.0
-		if abs(approximation - betterApproximation) < 0.0000001:
-			print(nrOfIterations, end=": ")
-			return betterApproximation
-		nrOfIterations += 1
-		approximation = betterApproximation
+  approximation = number / 2.0
+  nrOfIterations = 1
+  while True:
+    betterApproximation = (approximation + number / approximation) / 2.0
+    if abs(approximation - betterApproximation) < 0.0000001:
+      print(nrOfIterations, end=": ")
+      return betterApproximation
+    nrOfIterations += 1
+    approximation = betterApproximation
 
 
 # Testing

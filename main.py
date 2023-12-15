@@ -38,6 +38,7 @@ for i in reversed(range(lenNr2)):
 if overflowNr != 0:
   sumNumberStr = str(overflowNr) + sumNumberStr
 
-print(number1Str)
-print(number2Str)
+print(" " + number1Str)
+print("+" + number2Str)
 print(sumNumberStr)
+print(int(number1Str) + int(number2Str))
