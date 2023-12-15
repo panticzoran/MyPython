@@ -1,67 +1,43 @@
-import turtle    # Tess becomes a traffic light.
+# Calculating addition "manually"
 
-# Traffic light simulator
-# State machine programming example
-
-turtle.setup(400,500)
-wn = turtle.Screen()
-wn.title("Tess becomes a traffic light!")
-wn.bgcolor("lightgreen")
-tess = turtle.Turtle()
-
-
-def draw_housing():
-    """ Draw a nice housing to hold the traffic lights """
-    tess.pensize(3)
-    tess.color("black", "darkgrey")
-    tess.begin_fill()
-    tess.forward(80)
-    tess.left(90)
-    tess.forward(200)
-    tess.circle(40, 180)
-    tess.forward(200)
-    tess.left(90)
-    tess.end_fill()
+def addLeadingZeroes(numberStr, sizeNrStr):
+  """Adds number of leading zeroes to a number represented as string"""
+  lenNumberStr = len(numberStr)
+  newNumberStr = ""
+  for _i in range(sizeNrStr - lenNumberStr):
+    newNumberStr += "0"
+  newNumberStr += numberStr
+  return newNumberStr
 
 
-draw_housing()
+number1Str = input("Enter the 1st number:  ")
+number2Str = input("Enter the 2nd number:  ")
 
-tess.penup()
-# Position tess onto the place where the green light should be
-tess.forward(40)
-tess.left(90)
-tess.forward(50)
-# Turn tess into a big green circle
-tess.shape("circle")
-tess.shapesize(3)
-tess.fillcolor("green")
+lenNr1 = len(number1Str)
+lenNr2 = len(number2Str)
 
-# A traffic light is a kind of state machine with three states,
-# Green, Orange, Red. We number these states 0, 1, 2
-# When the machine changes state, we change tess' position and
-# her fillcolor.
+if lenNr2 > lenNr1:
+  number1Str = addLeadingZeroes(number1Str, lenNr2)
+elif lenNr2 < lenNr1:
+  number2Str = addLeadingZeroes(number2Str, lenNr1)
+  lenNr2 = lenNr1
 
-# This variable holds the current state of the machine
-state_num = 0
+sumNumberStr = ""
+overflowNr = 0
+sumDigitStr = ""
 
+for i in reversed(range(lenNr2)):
+  sumDigitStr = str(int(number1Str[i]) + int(number2Str[i]) + int(overflowNr))
+  if len(sumDigitStr) == 1:
+    sumNumberStr = sumDigitStr + sumNumberStr
+    overflowNr = 0
+  else:
+    sumNumberStr = sumDigitStr[1] + sumNumberStr
+    overflowNr = int(sumDigitStr[0])
 
-def advance_state_machine():
-    global state_num
-    if state_num == 0: # Transition from state 0 to state 1
-        tess.forward(70)
-        tess.fillcolor("orange")
-        state_num = 1
-    elif state_num == 1: # Transition from state 1 to state 2
-        tess.forward(70)
-        tess.fillcolor("red")
-        state_num = 2
-    else: # Transition from state 2 to state 0
-        tess.back(140)
-        tess.fillcolor("green")
-        state_num = 0
+if overflowNr != 0:
+  sumNumberStr = str(overflowNr) + sumNumberStr
 
-# Bind the event handler to the space key.
-wn.onkey(advance_state_machine, "space")
-
-wn.listen() # Listen for events
-wn.mainloop()
+print(number1Str)
+print(number2Str)
+print(sumNumberStr)

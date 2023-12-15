@@ -1,23 +1,43 @@
-# Perfect number, a positive integer that is equal to the sum of its proper divisors
-# The smallest perfect number is 6, which is the sum of 1, 2, and 3. 
-# Other perfect numbers are 28, 496, and 8128.
+# Calculating addition "manually"
 
-def isProperDivisor(nr , divisor):
-  ''' Returns True if proper divisor, otherwise False'''
-  return nr % divisor == 0
-
-def isPerfect(nr):
-  '''Returns True if perfect number, otherwise False'''
-  sumDivisors = 1
-  for i in range (2, nr):
-    if isProperDivisor(nr,i):
-      sumDivisors += i
-  return sumDivisors == nr    
+def addLeadingZeroes(numberStr, sizeNrStr):
+  """Adds number of leading zeroes to a number represented as string"""
+  lenNumberStr = len(numberStr)
+  newNumberStr = ""
+  for _i in range(sizeNrStr - lenNumberStr):
+    newNumberStr += "0"
+  newNumberStr += numberStr
+  return newNumberStr
 
 
-checkUntil = 50000000 # Check for perfect numbers from 1 to checkUntil
+number1Str = input("Enter the 1st number:  ")
+number2Str = input("Enter the 2nd number:  ")
 
-for i in range(2, checkUntil):
-  print("Checking number: ", i , end="\r", flush=True)
-  if isPerfect(i):
-    print("\nThe number", i , " is perfect number")
+lenNr1 = len(number1Str)
+lenNr2 = len(number2Str)
+
+if lenNr2 > lenNr1:
+  number1Str = addLeadingZeroes(number1Str, lenNr2)
+elif lenNr2 < lenNr1:
+  number2Str = addLeadingZeroes(number2Str, lenNr1)
+  lenNr2 = lenNr1
+
+sumNumberStr = ""
+overflowNr = 0
+sumDigitStr = ""
+
+for i in reversed(range(lenNr2)):
+  sumDigitStr = str(int(number1Str[i]) + int(number2Str[i]) + int(overflowNr))
+  if len(sumDigitStr) == 1:
+    sumNumberStr = sumDigitStr + sumNumberStr
+    overflowNr = 0
+  else:
+    sumNumberStr = sumDigitStr[1] + sumNumberStr
+    overflowNr = int(sumDigitStr[0])
+
+if overflowNr != 0:
+  sumNumberStr = str(overflowNr) + sumNumberStr
+
+print(number1Str)
+print(number2Str)
+print(sumNumberStr)
