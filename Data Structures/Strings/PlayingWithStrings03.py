@@ -3,36 +3,42 @@ import string
 
 # Count letters in a string
 
+
 def countLetters(aString, aLetter):
-	nrOccurences = 0
-	for i in range(len(aString)):
-		if aString[i] == aLetter:
-			nrOccurences += 1
-	return nrOccurences
+  nrOccurences = 0
+  for i in range(len(aString)):
+    if aString[i] == aLetter:
+      nrOccurences += 1
+  return nrOccurences
+
 
 someString = input("Please enter the string to be searched:")
 someLetter = input("Please enter the letter to be counted:")
-print("The letter '", someLetter, "' appears", countLetters(someString, someLetter), "times in the string '", someString, "'")
+print("The letter '", someLetter, "' appears",
+      countLetters(someString, someLetter), "times in the string '",
+      someString, "'")
 print("\n")
-
 
 # Count the number of words in a text containing a specific letter
 
+
 def stringToWords(aString):
-	return aString.split()
+  return aString.split()
+
 
 def removePunctuation(aString):
-	for i in range(len(aString)):
-		if aString[i] in string.punctuation:
-			aString = aString.replace(aString[i], " ")
-	return aString
+  for i in range(len(aString)):
+    if aString[i] in string.punctuation:
+      aString = aString.replace(aString[i], " ")
+  return aString
+
 
 def countWordsHavingLetter(aListOfWords, theLetter):
-	count = 0
-	for word in aListOfWords:
-		if theLetter in word:
-			count += 1
-	return count
+  count = 0
+  for word in aListOfWords:
+    if theLetter in word:
+      count += 1
+  return count
 
 
 letterInWord = "e"
@@ -67,7 +73,10 @@ wordsList = stringToWords(my_story)
 # Third, counting the number of words in the string that contain the letter "e"
 theNumber = countWordsHavingLetter(wordsList, letterInWord)
 
-print("Your text contains {0} words, of which {1} ({2:.2f}%) contain an '{3}'.".format(len(wordsList), theNumber, 100*theNumber/len(wordsList), letterInWord))
+print(
+    "Your text contains {0} words, of which {1} ({2:.2f}%) contain an '{3}'.".
+    format(len(wordsList), theNumber, 100 * theNumber / len(wordsList),
+           letterInWord))
 
 # First removing the punctuation (puting spaces instead)
 my_story_2 = removePunctuation(my_story_2)
@@ -78,4 +87,7 @@ wordsList = stringToWords(my_story_2)
 # Third, counting the number of words in the string that contain the letter "e"
 theNumber = countWordsHavingLetter(wordsList, letterInWord)
 
-print("Your text contains {0} words, of which {1} ({2:.2f}%) contain an '{3}'.".format(len(wordsList), theNumber, 100*theNumber/len(wordsList), letterInWord))
+print(
+    "Your text contains {0} words, of which {1} ({2:.2f}%) contain an '{3}'.".
+    format(len(wordsList), theNumber, 100 * theNumber / len(wordsList),
+           letterInWord))

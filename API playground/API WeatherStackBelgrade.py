@@ -2,6 +2,7 @@
 
 # Importing environmental variables
 import os
+
 # External library "requests" is for fetching data over the internet - this module (not actually part of Python)
 import requests
 
@@ -27,4 +28,6 @@ date = js['location']['localtime']
 city = js['location']['name']
 country = js['location']['country']
 feelsLike = js['current']['feelslike']
-print(f"The temperature in {city}, {country} on {date} is {temperature} degrees Celsius, which feels like {feelsLike} degrees Celsius")
+print(
+    f"The temperature in {city}, {country} on {date} is {temperature} degrees Celsius, which feels like {feelsLike} degrees Celsius"
+)
