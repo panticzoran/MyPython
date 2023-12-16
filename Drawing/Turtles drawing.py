@@ -19,7 +19,7 @@ ugao = 90
 
 for longer in range(6):
 
-  for i in range(4):
+  for _i in range(4):
 
     drawLenght = lenght + lenght * longer
 

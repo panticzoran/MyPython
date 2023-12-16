@@ -1,6 +1,5 @@
 # Playing with strings and formatting
 
-
 import string
 
 s = "Hello, how are you? I'm doing well, thank you."
@@ -13,14 +12,16 @@ print("The string splitted to words is:")
 print(s.split())
 print("\n")
 
+
 # Using the string module "punctuation" (need to "import string" at the beginning)
 # Removing the punctuation from a string
 def removePunctuation(ss):
-		newS = ""
-		for eachChar in ss:
-			if eachChar not in string.punctuation:
-				newS += eachChar
-		return newS
+  newS = ""
+  for eachChar in ss:
+    if eachChar not in string.punctuation:
+      newS += eachChar
+  return newS
+
 
 print("The string with the punctuation removed is:")
 print(removePunctuation(s))
@@ -64,6 +65,7 @@ n2 = "Whitney"
 n3 = "Hilton"
 print("Pi to three decimal places is {0:.3f}".format(3.1415926))
 print("123456789 123456789 123456789 123456789 123456789 123456789")
-print("|||{0:<15}|||{1:^15}|||{2:>15}|||Born in {3}|||".format(n1,n2,n3,1981))
+print("|||{0:<15}|||{1:^15}|||{2:>15}|||Born in {3}|||".format(
+    n1, n2, n3, 1981))
 print("The decimal value {0} converts to hex value {0:x}".format(123456))
 print("\n")
