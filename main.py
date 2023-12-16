@@ -1,5 +1,6 @@
 # Calculating addition "manually"
 
+
 def addLeadingZeroes(numberStr, sizeNrStr):
   """Adds number of leading zeroes to a number represented as string"""
   lenNumberStr = len(numberStr)
@@ -38,7 +39,8 @@ for i in reversed(range(lenNr2)):
 if overflowNr != 0:
   sumNumberStr = str(overflowNr) + sumNumberStr
 
-print(" " + number1Str)
-print("+" + number2Str)
-print(sumNumberStr)
+print("{0:>{width}}".format(number1Str, width=lenNr2 + 1))
+print("+" + "{0:>{width}}".format(number2Str, width=lenNr2))
+print("{0:>{width}}".format(sumNumberStr, width=lenNr2))
+
 print(int(number1Str) + int(number2Str))
