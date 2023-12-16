@@ -1,5 +1,6 @@
 # Calculating addition "manually"
 
+
 def addLeadingZeroes(numberStr, sizeNrStr):
   """Adds number of leading zeroes to a number represented as string"""
   lenNumberStr = len(numberStr)
@@ -12,6 +13,9 @@ def addLeadingZeroes(numberStr, sizeNrStr):
 
 number1Str = input("Enter the 1st number:  ")
 number2Str = input("Enter the 2nd number:  ")
+
+number1Prt = number1Str
+number2Prt = number2Str
 
 lenNr1 = len(number1Str)
 lenNr2 = len(number2Str)
@@ -38,6 +42,8 @@ for i in reversed(range(lenNr2)):
 if overflowNr != 0:
   sumNumberStr = str(overflowNr) + sumNumberStr
 
-print(number1Str)
-print(number2Str)
-print(sumNumberStr)
+print("\n")
+print("{0:>{width}}".format(number1Prt, width=lenNr2 + 1))
+print("+" + "{0:>{width}}".format(number2Prt, width=lenNr2))
+print((lenNr2 + 1) * "=")
+print("{0:>{width}}".format(sumNumberStr, width=lenNr2 + 1))
