@@ -24,13 +24,27 @@ students = [("John", ["CompSci", "Physics"]),
   ("Zuki", ["Sociology", "Economics", "Law", "Stats", "Music"])]
 
 
-# Listing students for the specific condition
+# Listing students for the specific condition v1
 counter = 0
 studentsTakingSubject = ""
 for (studentName, subjectTaken) in students:
   if "CompSci" in subjectTaken:
     counter += 1
     studentsTakingSubject += studentName + " "
+
+print("The total number of students is", len(students))
+print("The number of students taking CompSci is", counter, "and those are:", studentsTakingSubject)
+
+print("\n")
+
+
+# Listing students for the specific condition v2
+counter = 0
+studentsTakingSubject = []
+for (studentName, subjectTaken) in students:
+  if "CompSci" in subjectTaken:
+    counter += 1
+    studentsTakingSubject.append(studentName)
 
 print("The total number of students is", len(students))
 print("The number of students taking CompSci is", counter, "and those are:", studentsTakingSubject)
