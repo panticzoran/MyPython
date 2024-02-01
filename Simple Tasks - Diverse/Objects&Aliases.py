@@ -3,13 +3,13 @@
 
 a = "Lala"
 b = a
-print("a and b :", a, b)
+print("Strings a and b :", a, b)
 print("a and b are same object:", a is b)
 print("a and b have the same value:", a == b)
 print("----")
 # Asining a new value to a, b stays the same, only a changes
 a = "nesto"
-print("a and b :", a, b)
+print("Strings a and b :", a, b)
 print("a and b are same object:", a is b)
 print("a and b have the same value:", a == b)
 
@@ -19,13 +19,13 @@ print("\n")
 # same object):
 a = [1, 2, 3]
 b = [1, 2, 3]
-print("a and b :", a, b)
+print("Lists a and b :", a, b)
 print("a and b are same object:", a is b)
 print("a and b have the same value:", a == b)
 print("----")
 # Asining a new value to a, b stays the same, only a changes
 a = [1, 3, 3]
-print("a and b :", a, b)
+print("Lists a and b :", a, b)
 print("a and b are same object:", a is b)
 print("a and b have the same value:", a == b)
 
@@ -36,12 +36,23 @@ print("\n")
 # Changes made with one alias affect the other:
 a = [1, 2, 3]
 b = a
-print("a and b :", a, b)
+print("Lists a and b :", a, b)
 print("a and b are same object:", a is b)
 print("a and b have the same value:", a == b)
 print("----")
 # Asining a new value to a, b stays the same, only a changes
 a = [1, 3, 3]
-print("a and b :", a, b)
+print("Lists a and b :", a, b)
+print("a and b are same object:", a is b)
+print("a and b have the same value:", a == b)
+
+print("\n")
+
+# Cloning a list
+# The easiest way to clone a list is to use the slice operator - taking any slice of a 
+# list creates a new list.
+a = [1, 2, 3]
+b = a[:]
+print("Lists a and b :", a, b)
 print("a and b are same object:", a is b)
 print("a and b have the same value:", a == b)
