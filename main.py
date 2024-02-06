@@ -51,3 +51,23 @@ print("The number of students taking CompSci is", counter, "and those are:", stu
 
 print("\n")
 
+
+# Enumerating
+
+for (i, value) in enumerate(students):
+  print(i, value)
+
+print("\n")
+
+
+# Enumerating
+
+for (i, sName) in enumerate(students):
+  print(i, "---", sName)
+  for valueSub in sName:
+    print("--", valueSub)
+    for (z, sCourses) in enumerate(valueSub):
+      print(z, "-", sCourses)
+  print("\n")
+
+print("\n")
