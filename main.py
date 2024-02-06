@@ -71,3 +71,16 @@ for (i, sName) in enumerate(students):
   print("\n")
 
 print("\n")
+
+
+def double_stuff(a_list):
+  """ Overwrite each element in a_list with double its value. """
+  for (idx, val) in enumerate(a_list):
+    a_list[idx] = 2 * val
+
+things = [2, 5, 9]
+print("Original list", things)
+double_stuff(things)
+print("List after calling the function", things)
+
+print("\n")
