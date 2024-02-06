@@ -52,6 +52,23 @@ print("The number of students taking CompSci is", counter, "and those are:", stu
 print("\n")
 
 
+# Traversing a list without enumerating
+
+name_list = ['lisa', 'emma', 'sarah', 'lee', 'jim']
+print('Original name_list = ' + str(name_list))
+
+modified_list = []
+for name in name_list:
+    modified_name = name[0].upper() + name[1:]
+    modified_list.append(modified_name)
+
+name_list = modified_list
+print('Modified name_list = ' + str(name_list))
+
+print("\n")
+
+
+
 # Enumerating
 
 for (i, value) in enumerate(students):
