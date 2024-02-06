@@ -60,7 +60,7 @@ for (i, value) in enumerate(students):
 print("\n")
 
 
-# Enumerating
+# Enumerating structure
 
 for (i, sName) in enumerate(students):
   print(i, "---", sName)
