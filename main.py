@@ -73,6 +73,9 @@ for (i, sName) in enumerate(students):
 print("\n")
 
 
+# Passing a list as an argument actually passes a reference to the list, not a copy or 
+# clone of the list.
+
 def double_stuff(a_list):
   """ Overwrite each element in a_list with double its value. """
   for (idx, val) in enumerate(a_list):
