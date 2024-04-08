@@ -1,0 +1,4 @@
+This is the contents of the file.
+Some lines of text.
+Yes.
+One more line of text.
