@@ -1,4 +1,5 @@
-# Sending a GET request to JSONPlaceholder to retrieve a list of posts and then prints the different contents of the posts
+# Sending a GET request to JSON Placeholder to retrieve a list of posts and then 
+# prints the different contents of the posts
 
 import requests
 
@@ -12,7 +13,8 @@ def fetchPostTitle(postIndex):
         return "No posts found."
 
 def fetchPostBody(postIndex):
-    response = requests.get('https://jsonplaceholder.typicode.com/posts') # JSONPlaceholder = fake online REST API for testing and prototyping
+    # JSONPlaceholder = fake online REST API for testing and prototyping
+    response = requests.get('https://jsonplaceholder.typicode.com/posts')
     posts = response.json()  # Convert the response to a Python list
     return posts[postIndex]['body']
 
